@@ -19,118 +19,142 @@ interface SeedTrackedDestinationRow {
   locale: string;
 }
 
+// 統一設定預設日期與參數，方便後續修改
+const defaultParams = {
+  tripType: "round_trip" as const,
+  cabinClass: "economy" as const,
+  departureDateFrom: "2026-06-01",
+  departureDateTo: "2026-06-30",
+  returnDateFrom: "2026-06-04",
+  returnDateTo: "2026-07-10",
+  maxStops: 1,
+  currencyCode: "TWD",
+  locale: "zh-TW"
+};
+
 const seedRows: SeedTrackedDestinationRow[] = [
+  // ==========================================
+  // 1. 台北/桃園出發 (TPE / TSA)
+  // ==========================================
   {
-    id: "lon-kef-rt-econ",
-    originAirportCode: "LON",
-    destinationAirportCode: "KEF",
-    destinationCity: "Reykjavik",
-    destinationCountry: "Iceland",
-    tripType: "round_trip",
-    cabinClass: "economy",
-    departureDateFrom: "2026-06-01",
-    departureDateTo: "2026-06-30",
-    returnDateFrom: "2026-06-04",
-    returnDateTo: "2026-07-10",
-    maxStops: 1,
-    currencyCode: "GBP",
-    locale: "en-GB"
+    id: "tpe-nrt-rt-econ",
+    originAirportCode: "TPE",
+    destinationAirportCode: "NRT",
+    destinationCity: "Tokyo",
+    destinationCountry: "Japan",
+    ...defaultParams
   },
   {
-    id: "lon-cph-rt-econ",
-    originAirportCode: "LON",
-    destinationAirportCode: "CPH",
-    destinationCity: "Copenhagen",
-    destinationCountry: "Denmark",
-    tripType: "round_trip",
-    cabinClass: "economy",
-    departureDateFrom: "2026-06-01",
-    departureDateTo: "2026-06-30",
-    returnDateFrom: "2026-06-04",
-    returnDateTo: "2026-07-10",
-    maxStops: 1,
-    currencyCode: "GBP",
-    locale: "en-GB"
+    id: "tpe-kix-rt-econ",
+    originAirportCode: "TPE",
+    destinationAirportCode: "KIX",
+    destinationCity: "Osaka",
+    destinationCountry: "Japan",
+    ...defaultParams
   },
   {
-    id: "lon-arn-rt-econ",
-    originAirportCode: "LON",
-    destinationAirportCode: "ARN",
-    destinationCity: "Stockholm",
-    destinationCountry: "Sweden",
-    tripType: "round_trip",
-    cabinClass: "economy",
-    departureDateFrom: "2026-06-01",
-    departureDateTo: "2026-06-30",
-    returnDateFrom: "2026-06-04",
-    returnDateTo: "2026-07-10",
-    maxStops: 1,
-    currencyCode: "GBP",
-    locale: "en-GB"
+    id: "tpe-icn-rt-econ",
+    originAirportCode: "TPE",
+    destinationAirportCode: "ICN",
+    destinationCity: "Seoul",
+    destinationCountry: "South Korea",
+    ...defaultParams
   },
   {
-    id: "lon-osl-rt-econ",
-    originAirportCode: "LON",
-    destinationAirportCode: "OSL",
-    destinationCity: "Oslo",
-    destinationCountry: "Norway",
-    tripType: "round_trip",
-    cabinClass: "economy",
-    departureDateFrom: "2026-06-01",
-    departureDateTo: "2026-06-30",
-    returnDateFrom: "2026-06-04",
-    returnDateTo: "2026-07-10",
-    maxStops: 1,
-    currencyCode: "GBP",
-    locale: "en-GB"
+    id: "tpe-bkk-rt-econ",
+    originAirportCode: "TPE",
+    destinationAirportCode: "BKK",
+    destinationCity: "Bangkok",
+    destinationCountry: "Thailand",
+    ...defaultParams
   },
   {
-    id: "lon-hel-rt-econ",
-    originAirportCode: "LON",
-    destinationAirportCode: "HEL",
-    destinationCity: "Helsinki",
-    destinationCountry: "Finland",
-    tripType: "round_trip",
-    cabinClass: "economy",
-    departureDateFrom: "2026-06-01",
-    departureDateTo: "2026-06-30",
-    returnDateFrom: "2026-06-04",
-    returnDateTo: "2026-07-10",
-    maxStops: 1,
-    currencyCode: "GBP",
-    locale: "en-GB"
+    id: "tpe-kul-rt-econ",
+    originAirportCode: "TPE",
+    destinationAirportCode: "KUL",
+    destinationCity: "Kuala Lumpur",
+    destinationCountry: "Malaysia",
+    ...defaultParams
   },
   {
-    id: "lon-bud-rt-econ",
-    originAirportCode: "LON",
-    destinationAirportCode: "BUD",
-    destinationCity: "Budapest",
-    destinationCountry: "Hungary",
-    tripType: "round_trip",
-    cabinClass: "economy",
-    departureDateFrom: "2026-06-01",
-    departureDateTo: "2026-06-30",
-    returnDateFrom: "2026-06-04",
-    returnDateTo: "2026-07-10",
-    maxStops: 1,
-    currencyCode: "GBP",
-    locale: "en-GB"
+    id: "tpe-sgn-rt-econ",
+    originAirportCode: "TPE",
+    destinationAirportCode: "SGN",
+    destinationCity: "Ho Chi Minh City",
+    destinationCountry: "Vietnam",
+    ...defaultParams
+  },
+
+  // ==========================================
+  // 2. 台中出發 (RMQ)
+  // ==========================================
+  {
+    id: "rmq-nrt-rt-econ",
+    originAirportCode: "RMQ",
+    destinationAirportCode: "NRT",
+    destinationCity: "Tokyo",
+    destinationCountry: "Japan",
+    ...defaultParams
   },
   {
-    id: "lon-prg-rt-econ",
-    originAirportCode: "LON",
-    destinationAirportCode: "PRG",
-    destinationCity: "Prague",
-    destinationCountry: "Czech Republic",
-    tripType: "round_trip",
-    cabinClass: "economy",
-    departureDateFrom: "2026-06-01",
-    departureDateTo: "2026-06-30",
-    returnDateFrom: "2026-06-04",
-    returnDateTo: "2026-07-10",
-    maxStops: 1,
-    currencyCode: "GBP",
-    locale: "en-GB"
+    id: "rmq-icn-rt-econ",
+    originAirportCode: "RMQ",
+    destinationAirportCode: "ICN",
+    destinationCity: "Seoul",
+    destinationCountry: "South Korea",
+    ...defaultParams
+  },
+  {
+    id: "rmq-sgn-rt-econ",
+    originAirportCode: "RMQ",
+    destinationAirportCode: "SGN",
+    destinationCity: "Ho Chi Minh City",
+    destinationCountry: "Vietnam",
+    ...defaultParams
+  },
+
+  // ==========================================
+  // 3. 高雄出發 (KHH)
+  // ==========================================
+  {
+    id: "khh-nrt-rt-econ",
+    originAirportCode: "KHH",
+    destinationAirportCode: "NRT",
+    destinationCity: "Tokyo",
+    destinationCountry: "Japan",
+    ...defaultParams
+  },
+  {
+    id: "khh-kix-rt-econ",
+    originAirportCode: "KHH",
+    destinationAirportCode: "KIX",
+    destinationCity: "Osaka",
+    destinationCountry: "Japan",
+    ...defaultParams
+  },
+  {
+    id: "khh-icn-rt-econ",
+    originAirportCode: "KHH",
+    destinationAirportCode: "ICN",
+    destinationCity: "Seoul",
+    destinationCountry: "South Korea",
+    ...defaultParams
+  },
+  {
+    id: "khh-bkk-rt-econ",
+    originAirportCode: "KHH",
+    destinationAirportCode: "BKK",
+    destinationCity: "Bangkok",
+    destinationCountry: "Thailand",
+    ...defaultParams
+  },
+  {
+    id: "khh-dad-rt-econ",
+    originAirportCode: "KHH",
+    destinationAirportCode: "DAD",
+    destinationCity: "Da Nang",
+    destinationCountry: "Vietnam",
+    ...defaultParams
   }
 ];
 
